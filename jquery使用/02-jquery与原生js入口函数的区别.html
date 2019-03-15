@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+  <script>
+  	// 原生js
+  	window.onload=function(){
+  		//1.通过原生js入口函数可以拿到dom元素。
+   		var img =document.getElementsByTagName('img')[0];
+  		console.log(img);
+  		//2.通过原生js入口函数可以拿到dom元素的宽高。
+
+  		var width= window.getComputedStyle(img).width;
+  		console.log('原生js' + width);
+
+  	}
+  	$(document).ready(function(){
+  		//1.通过jquery入口函数可以拿到dom元素。
+  		// console.log('jquery');
+  		// var $img = $('img')[0];
+  		var $img = $('img');
+  		console.log($img);
+  		var $width = $img.width();
+  		console.log('jquery' , $width);
+  	});
+  	window.onload = function(){
+  		console.log('win1');
+  	}
+  	window.onload = function() {
+  		console.log('win2');
+  	}
+
+  	//原生的会等到dom加载完成，图片加载完成才会执行
+  	//jquery会等到dom加载完成，不会等到图片加载完成就执行
+  	//多个入口函数原生的会覆盖
+  	//多个入口函数jquery后面的不会覆盖前面的
+  	$(document).ready(function() {
+  		console.log('win3');
+  	})
+  	$(document).ready(function() {
+  		console.log('win4');
+  	})
+  </script>
+</head>
+<body>
+<img src="https://img.alicdn.com/tfs/TB1P_MofwmTBuNjy1XbXXaMrVXa-190-140.gif" alt="">
+	</body>
+</html>

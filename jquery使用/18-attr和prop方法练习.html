@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+  <script>
+  	$(function () {
+  		// 给按钮添加点击事件
+  		var btn = document.getElementsByTagName('button')[0];
+  		// var btn = $('btn');
+  		console.log(btn);
+  		btn.onclick = function () {
+  			var input = document.getElementsByTagName('input')[0];
+  			var text = input.value; 
+  			$('img').attr('src',text);
+  		}
+  		// 获取输入框输入的内容
+  		// 修改img的src的值
+  		// 
+  	})
+  </script>
+</head>
+<body>
+	<input type="text">
+	<button>切换图片</button>
+	<img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="">
+</body>
+</html>
