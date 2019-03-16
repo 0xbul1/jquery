@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+   
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .father {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .son {
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+     <script>
+        $(function () {
+            // 什么是事件冒泡
+            $('.son').click(function(e){
+                console.log('son');
+             // 如何阻止事件冒泡
+                // return false;
+                // e.stopPropagation();
+            })
+            $('.father').click(function(){
+                console.log('father');
+            })
+            // 什么是默认行为
+            $('a').click(function(e){
+                console.log('aaa');
+            // 如何阻止默认行为
+                // return false;
+                // e.preventDefault();
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <a href="http://www.baidu.com">点击</a>
+    <form action="http://www.taobao.com">
+        <input type="text">
+        <input type="submit">
+    </form>
+</body>
+
+</html>

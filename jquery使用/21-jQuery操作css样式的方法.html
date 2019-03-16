@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+  <script>
+      $(function () {
+        // 1.逐个设置
+        $('div').css('width','50px');
+        $('div').css('height','50px');
+        $('div').css('background','red');
+
+        // 2,链式设置
+        // 注意：链式操作大于三部，建议分开
+        $('div').css('width','100px').css('height','5px').css('background','red');
+
+        // 3，批量设置
+        $('div').css({
+            width: '10px',
+            height: '20px',
+            background: 'yellow'
+        });
+        // 4，获取css属性值
+        console.log($('div').css('width'));
+       
+      });
+  
+  </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
