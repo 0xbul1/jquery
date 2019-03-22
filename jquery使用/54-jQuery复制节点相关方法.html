@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script>
+        $(function () { 
+            // 复制
+            // clone([Even[,deepEven]]);
+            // 如果传入false就是浅复制，如果传入true就是深复制
+            // 浅复制只会复制元素，不会复制元素事件
+            // 深复制会复制元素，而且还会复制元素事件
+
+            $('button').eq(0).click(function(){
+                // 浅复制一个元素
+                var $li = $('li:first').clone(false);
+                // 将复制的元素添加到ul中
+                $('ul').append($li);
+            });
+            $('button').eq(1).click(function(){
+                 // 深复制一个元素
+                 var $li = $('li:first').clone(true);
+                // 将复制的元素添加到ul中
+                $('ul').append($li);
+            });
+
+            $('li').click(function(){
+                console.log($(this).html());
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>浅复制</button>
+    <button>深复制</button>
+    <ul>
+        <li>我是第1个节点</li>
+        <li>我是第2个节点</li>
+        <li>我是第3个节点</li>
+        <li>我是第4个节点</li>
+        <li>我是第5个节点</li>
+    </ul>
+</body>
+
+</html>

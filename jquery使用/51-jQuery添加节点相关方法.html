@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <style></style>
+    <script>
+        $(function () {
+            // 内部插入
+            
+            // append(content|fn)
+            // appendTo(content)
+            // 会将元素添加到指定元素内部的最后
+
+            // prepend(content|fn)
+            // prependTo(content)
+            // 会将元素添加到指定元素内部的最前面
+
+            // 外部插入
+            // after(content|fn)
+            // insertAfter(content)
+            // 会将元素添加到指定元素外部的最后
+
+            // before(content|fn)
+            // insertBefore(content)
+            // 会将元素添加到指定元素外部的前面
+
+            $('button').click(function () {
+                //1，创建节点
+                var $li = $('<li>这是新增节点</li>');
+                // 2，添加节点
+                // $('ul').append($li); 
+                // $li.appendTo('ul');
+                // $('ul').prepend($li); 
+                // $li.prependTo('ul');
+
+                // $('ul').after($li); 
+                // $('ul').before($li); 
+                // $li.insertAfter('ul');
+                // $li.insertBefore('ul');
+
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>添加节点</button>
+    <ul>
+        <li>节点1</li>
+        <li>节点2</li>
+        <li>节点3</li>
+    </ul>
+</body>
+
+</html>
