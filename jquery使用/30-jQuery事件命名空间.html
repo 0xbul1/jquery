@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+   
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .father {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .son {
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+     <script>
+        $(function () {
+            // 自定义事件满足两个条件
+            // 1,事件是通过on绑定的
+            // 2,事件通过trigger来触发
+            // $('.son').click(function(){
+            //     console.log('son');
+            // })
+
+
+            // 想让事件的命民空间有效，必须满足两个条件
+            // 1,事件是通过on绑定的
+            // 2,事件通过trigger来触发
+
+                $('.father').on('click.ls',function(){
+                    console.log('father1');
+                });
+                $('.father').on('click',function(){
+                    console.log('father2');
+                });
+                $('.son').on('click.ls',function(){
+                    console.log('son1');
+                });
+                // 利用trigger触发子元素带命名空间的事件，则父元素带相同命名空间的事件也会被触发，父元素没有命名空间的事件不会被触发(冒泡的原因)
+                // 利用trigger触发子元素不带命名空间的事件,那么子元素所有相同类型的事件和父元素所有相同类型的事件都会被触发
+                $('.son').trigger('click.ls');
+                // $('.son').trigger('click');
+           
+        });
+    </script>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <a href="http://www.baidu.com">点击</a>
+    <form action="http://www.taobao.com">
+        <input type="text">
+        <input type="submit">
+    </form>
+</body>
+
+</html>

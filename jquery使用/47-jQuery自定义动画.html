@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            background:red;
+        }
+        .two {
+            background: blue;
+        }
+    </style>    
+    <script>
+        $(function(){
+            $('button').eq(0).click(function(){
+                // $('.one').animate({
+                //     width:200,
+                //     height:200
+                // },500,function(){
+                //     console.log(1);
+                // });
+                // $('.one').animate({
+                //     marginLeft:1000
+                // },5000,'linear',function(){
+                //     console.log(1);
+                // });
+                // $('.two').animate({
+                //     marginLeft:1000
+                // },5000,function(){
+                //     console.log(1);
+                // });
+                $('.two').animate({
+                    marginLeft:'+=100'
+                },500,function(){
+                    console.log(1);
+                });
+                $('.two').animate({
+                    // width: 'hide'
+                    width: 'toggle'
+                },500,function(){
+                    console.log(1);
+                });
+            });
+        });
+    </script>    
+</head>
+<body>
+    <button>操作属性</button>
+    <button>累加属性</button>
+    <button>关键字</button>
+    <div class="one"></div>
+    <div class="two"></div>
+</body>
+</html>

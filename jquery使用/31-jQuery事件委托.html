@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            // 什么是事件委托?
+            // 请别人帮忙做事情,然后将做完的结果反馈给我们
+            $('button').click(function(){
+                $('ul').append('<li>我是新增的li</li>');
+            });
+            // 在jQuery中，如果通过核心函数找到的元素不止一个，那么在添加事件的时候，jQuery会遍历所有找到的元素，会给所有的元素添加事件。
+            // $('ul>li').click(function(){
+            //     console.log($(this).html());
+            // });
+            $('ul').delegate('li','click',function(){
+                console.log($(this).html());
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+    </ul>
+    <button>新增一个li</button>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .father {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .son {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+    </style>
+    <script>
+        $(function () {
+
+            //mouseover/mouseout
+            // 子元素被移入移出也会触发父元素的事件
+            $('.father').mouseover(function () {
+                console.log('father 移入mouseover');
+            });
+            $('.father').mouseout(function () {
+                console.log('father 移出mouseout');
+            });
+            // mouseenter/mouseleave
+            // 子元素被移入移出不会触发父元素的事件
+            $('.father').mouseenter(function () {
+                console.log('father 移入mouseenter');
+            });
+            $('.father').mouseleave(function () {
+                console.log('father 移出mouseleave');
+            });
+
+            
+            $('.father').hover(function () {
+                console.log('father 移入hover');
+            },function () {
+                console.log('father 移出hover');
+            });
+            $('.father').hover(function () {
+                console.log('father 移入移出hover');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+</html>
